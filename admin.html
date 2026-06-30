@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rains — Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <!-- NAVBAR -->
+  <nav class="nav glass">
+    <a href="#top" class="brand">
+      <span class="logo" id="brandEmoji">🎀</span>
+      <span><b id="brandName">Rains · Admin</b></span>
+    </a>
+    <a href="index.html" class="btn btn-ghost" style="margin-left:auto;padding:10px 18px" target="_blank">👁️ Website dekhein</a>
+  </nav>
+
+  <div class="wrap admin" id="top">
+
+    <!-- INTRO / STEPS -->
+    <section class="panel glass reveal">
+      <h1 class="panel-title">🛠️ Product Manager</h1>
+      <p class="panel-sub">Yahan se naye products add/edit karein. Ye sab aap ke browser mein chalta hai — koi internet ya server zaroori nahi.</p>
+      <ol class="steps">
+        <li><b>Form bharein</b> — naam, category, price aur photo choose karein, phir <b>“Product Add”</b> dabayein.</li>
+        <li>Jitne products chahein add karte jayein (niche list mein nazar aayenge).</li>
+        <li>Jab tayyar ho jayein, <b>“⬇ Download products.js”</b> dabayein.</li>
+        <li>Download hui file ko <code>js</code> folder mein purani <code>products.js</code> ki <b>jagah</b> rakh dein.</li>
+        <li>Website refresh karein — naye products live! 🎉</li>
+      </ol>
+      <p class="panel-sub" style="margin-top:14px">💡 Logo, brand naam, WhatsApp number, Instagram ya colors badalne ke liye niche <b>Website Settings</b> use karein.</p>
+    </section>
+
+    <!-- WEBSITE SETTINGS -->
+    <section class="panel glass reveal">
+      <h2 class="panel-title sm">⚙️ Website Settings — Logo, Brand &amp; Contact</h2>
+      <p class="panel-sub">Yahan se logo, naam, WhatsApp number, Instagram aur colors change karein. Baad mein niche <b>“⬇ Download config.js”</b> dabayein aur us file ko <code>js</code> folder mein purani <code>config.js</code> ki jagah rakh dein.</p>
+      <div class="form-grid">
+        <div class="field span2">
+          <label>Logo</label>
+          <div class="img-row">
+            <label class="file-btn">🖼️ Logo image upload<input id="s-logo" type="file" accept="image/*" hidden></label>
+            <button class="mini del" id="s-logo-remove" type="button">Logo hatayein</button>
+            <input id="s-emoji" type="text" maxlength="4" placeholder="ya emoji 🎀" style="max-width:130px">
+          </div>
+          <div class="img-preview" id="logoPreview" style="width:96px;height:96px;border-radius:18px"><span class="hint">—</span></div>
+          <small class="hint">Logo image upload karein to wo dikhega; warna emoji. (Square logo best lagta hai.)</small>
+        </div>
+
+        <div class="field"><label for="s-brand">Brand name</label><input id="s-brand" type="text" placeholder="Rains"></div>
+        <div class="field"><label for="s-cur">Currency</label><input id="s-cur" type="text" placeholder="Rs"></div>
+
+        <div class="field span2"><label for="s-tag">Tagline (hero ke neeche)</label><input id="s-tag" type="text"></div>
+
+        <div class="field"><label for="s-wa">WhatsApp number</label><input id="s-wa" type="text" placeholder="923001234567"></div>
+        <div class="field"><label for="s-ig">Instagram link</label><input id="s-ig" type="text" placeholder="https://instagram.com/your_page"></div>
+
+        <div class="field span2"><label for="s-greet">WhatsApp order greeting (message ka shuru)</label><input id="s-greet" type="text"></div>
+
+        <div class="field"><label for="s-c1">Color 1 (pink)</label><input id="s-c1" type="color" value="#ff5fa2"></div>
+        <div class="field"><label for="s-c2">Color 2 (purple)</label><input id="s-c2" type="color" value="#a855f7"></div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" id="btnDownloadCfg">⬇ Download config.js</button>
+        <button class="btn btn-ghost" id="btnCopyCfg">📋 Code copy</button>
+        <button class="btn btn-ghost" id="btnPreviewCfg">👁️ Yahan preview karein</button>
+      </div>
+    </section>
+
+    <!-- ADD / EDIT FORM -->
+    <section class="panel glass reveal">
+      <h2 class="panel-title sm" id="formTitle">Naya Product</h2>
+      <div class="form-grid">
+        <div class="field span2">
+          <label for="f-name">Product ka naam *</label>
+          <input id="f-name" type="text" placeholder="Jaise: Pink Bow Teddy Keychain">
+        </div>
+        <div class="field">
+          <label for="f-cat">Category (section) *</label>
+          <select id="f-cat"></select>
+        </div>
+        <div class="field">
+          <label for="f-price">Price (sirf number) *</label>
+          <input id="f-price" type="number" min="0" placeholder="350">
+        </div>
+        <div class="field span2">
+          <label for="f-badge">Tag (optional) — jaise New / Bestseller</label>
+          <input id="f-badge" type="text" placeholder="Khali bhi chhor sakte hain">
+        </div>
+
+        <div class="field span2">
+          <label>Product ki photo</label>
+          <div class="img-row">
+            <label class="file-btn">
+              📷 Photo choose karein
+              <input id="f-image" type="file" accept="image/*" hidden>
+            </label>
+            <button class="mini del" id="btnRemoveImg" type="button">Photo hatayein</button>
+          </div>
+          <div class="img-preview" id="imgPreview"><span class="hint">Koi photo select nahi</span></div>
+          <small class="hint">Tip: square (1:1) photo sab se acchi lagti hai. Photo apne aap chhoti (compress) ho jati hai taake website fast rahe.</small>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" id="btnSave">＋ Product Add karein</button>
+        <button class="btn btn-ghost" id="btnCancel" style="display:none">Cancel</button>
+      </div>
+    </section>
+
+    <!-- EXPORT BAR -->
+    <section class="panel glass reveal export-bar">
+      <div class="stats">
+        <div><b id="statCount">0</b><span>products</span></div>
+        <div><b id="statSize">0 KB</b><span>file size</span></div>
+      </div>
+      <div class="export-actions">
+        <button class="btn btn-primary" id="btnDownload">⬇ Download products.js</button>
+        <button class="btn btn-ghost" id="btnCopy">📋 Code copy</button>
+        <button class="btn btn-ghost" id="btnReset">↺ Website ki list</button>
+        <button class="btn btn-ghost danger" id="btnClear">🗑 Sab clear</button>
+      </div>
+      <p class="hint" style="width:100%;margin-top:6px">Yaad rahe: changes website par tab aayenge jab aap <b>Download</b> karke nayi <code>products.js</code> file ko <code>js</code> folder mein replace karein.</p>
+    </section>
+
+    <!-- LIVE LIST -->
+    <section class="panel-plain reveal">
+      <h2 class="panel-title sm">📦 Saare Products</h2>
+      <div class="grid" id="adminGrid"><!-- filled by JS --></div>
+    </section>
+
+  </div>
+
+  <div class="toast" id="toast">✓ <span>Saved</span></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

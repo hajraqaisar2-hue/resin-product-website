@@ -1,0 +1,112 @@
+================================================================
+   RAINS WEBSITE — Aasaan Guide (Roman Urdu)
+================================================================
+
+Shukriya! Ye aap ki handmade products ki website hai.
+Glassmorphism design, pink/purple theme, animations, cart aur
+WhatsApp ordering — sab ready hai.
+
+----------------------------------------------------------------
+1) WEBSITE KAISE KHOLEIN
+----------------------------------------------------------------
+- "Rains Websites" folder mein "index.html" file par double-click
+  karein. Aap ke browser (Chrome/Edge) mein website khul jayegi.
+- Admin (products add karne wala) page: "admin.html" kholein.
+
+----------------------------------------------------------------
+2) SAB SE PEHLE — APNI DETAILS DAALEIN (sirf 1 dafa)
+Iske 2 tareeqe hain — koi bhi use kar sakte hain:
+
+>> TAREEQA A (AASAN) — admin page ke "Website Settings" se <<
+- "admin.html" kholein -> upar "⚙️ Website Settings" panel.
+- Yahan se ye sab change ho sakta hai:
+     * Logo (image upload karein YA emoji likhein)
+     * Brand name aur tagline
+     * WhatsApp number   (jaise 923001234567)
+     * Instagram link
+     * Currency (Rs)
+     * Website ke colors (2 color picker)
+- "👁️ Yahan preview karein" se foran dekh lein kaisa lagega.
+- Phir "⬇ Download config.js" dabayein -> wo file "js" folder mein
+  purani "config.js" ki JAGAH rakh dein -> website refresh. Done!
+
+>> TAREEQA B (file edit) — agar khud file badalna ho <<
+File: js/config.js (Notepad mein kholein). Quotes " " ke andar:
+     whatsappNumber: "923001234567"   (country code + number, bina + aur 0)
+     instagramUrl:   "https://instagram.com/your_page"
+     brandName:      "Rains"
+Save karke website refresh. Bas!
+
+NOTE: Login/account ki zaroorat NAHI hai. Admin page bas aap ke
+computer par chalta hai. Jo bhi change karein, wo website par tab
+aata hai jab aap nayi file (products.js ya config.js) download karke
+"js" folder mein replace karte hain.
+
+----------------------------------------------------------------
+3) NAYE PRODUCTS KAISE ADD KAREIN  (sabse important)
+----------------------------------------------------------------
+- "admin.html" kholein.
+- Form bharein:
+     * Naam        (jaise: Pink Bow Teddy Keychain)
+     * Category    (5 sections mein se ek choose karein)
+     * Price       (sirf number, jaise 350)
+     * Tag         (optional: New / Bestseller)
+     * Photo       ("Photo choose karein" dabayein -> apni pic select)
+- "＋ Product Add karein" dabayein. Product niche list mein aa jayega.
+- Jitne products chahein, isi tarah add karte jayein.
+- Galti ho to product par "Edit" ya "Delete" dabayein.
+
+  >> JAB TAYYAR HO JAYEIN <<
+- Niche "⬇ Download products.js" button dabayein.
+- Aap ke computer mein "products.js" file download ho jayegi.
+- Us file ko "Rains Websites/js" folder mein le ja kar, wahan
+  pehle se mojood purani "products.js" ki JAGAH paste kar dein
+  (Replace / Yes dabayein).
+- Website refresh karein -> naye products live! 🎉
+
+----------------------------------------------------------------
+4) PHOTOS KE BAARE MEIN
+----------------------------------------------------------------
+- Photo seedhi admin page se add hoti hai — koi alag folder mein
+  daalne ki zaroorat NAHI.
+- Square (1:1) photo sab se best lagti hai.
+- Photo apne aap chhoti (compress) ho jati hai taake website fast rahe.
+- Achhi clear, achhi roshni wali photos lagayein — sales barhti hain!
+
+----------------------------------------------------------------
+5) ORDER KAISE AATA HAI
+----------------------------------------------------------------
+- Customer products ko "Cart" mein add karta hai.
+- Cart khol kar (chahe to) naam/phone/address likhta hai.
+- "💬 Order on WhatsApp" dabata hai.
+- Aap ke WhatsApp par poora order (items + total) ready message
+  ban kar aa jata hai. Aap reply kar ke order confirm kar lein.
+
+----------------------------------------------------------------
+6) WEBSITE KO ONLINE (INTERNET PAR) KAISE LAYEIN
+----------------------------------------------------------------
+Abhi ye website aap ke computer par chalti hai. Internet par free
+laane ke 2 aasaan tareeqe:
+
+  A) Netlify Drop (sabse aasan, free):
+     - https://app.netlify.com/drop par jayein.
+     - Poora "Rains Websites" folder drag-and-drop kar dein.
+     - Aap ko ek live link mil jayega (jaise rains.netlify.app).
+     - Wahi link Instagram bio mein laga dein.
+     - Aage jab products update karein: nayi products.js banayein,
+       folder update karein, aur dobara wahi folder drop kar dein.
+
+  B) GitHub Pages — thoda technical (agar chahein to bata dena).
+
+----------------------------------------------------------------
+7) CHHOTI MOTI TIPS
+----------------------------------------------------------------
+- Theme ka rang badalna ho: css/style.css mein sabse upar :root
+  block mein colors change kar sakte hain.
+- Naya section (category) chahiye? js/config.js mein CATEGORIES
+  list mein ek nayi line add kar dein (mujhe bol dein, main laga dunga).
+- Kuch bhi atke -> bas message kar dein. 💜
+
+================================================================
+   Banaya gaya pyaar se — Rains ke liye.
+================================================================

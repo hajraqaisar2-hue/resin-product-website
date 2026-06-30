@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rains — Handmade Keychains & Charms</title>
+  <meta name="description" content="Handmade keychains, charms aur bookmarks. Instagram se order karein.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- decorative background blobs -->
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <!-- ============================ NAVBAR ============================ -->
+  <nav class="nav glass">
+    <a href="#top" class="brand">
+      <span class="logo" id="brandEmoji">🎀</span>
+      <span><b id="brandName">Rains</b></span>
+    </a>
+    <div class="nav-links" id="navLinks"><!-- filled by JS --></div>
+    <button class="cart-btn" id="openCart" aria-label="Cart">
+      🛒<span class="cart-count" id="cartCount">0</span>
+    </button>
+  </nav>
+
+  <div class="wrap" id="top">
+
+    <!-- ============================= HERO ========================== -->
+    <header class="hero glass">
+      <span class="floaty" style="top:18px;left:8%">🔑</span>
+      <span class="floaty" style="top:30px;right:10%;animation-delay:1.5s">🦋</span>
+      <span class="floaty" style="bottom:24px;left:14%;animation-delay:.8s">🧸</span>
+      <span class="floaty" style="bottom:30px;right:16%;animation-delay:2.2s">🔖</span>
+
+      <span class="pill">✨ Handmade with love</span>
+      <h1>Choti choti cheezein,<br><span class="grad">bohot saara pyaar 💜</span></h1>
+      <p id="heroTagline">Handmade keychains, charms &amp; bookmarks — bnaye gaye pyaar se.</p>
+      <div class="hero-cta">
+        <a href="#sections" class="btn btn-primary">Shop Now ↓</a>
+        <a href="#" id="heroWa" class="btn btn-ghost" target="_blank">💬 WhatsApp par poochein</a>
+      </div>
+    </header>
+
+    <!-- ===================== PRODUCT SECTIONS ====================== -->
+    <main id="sections"><!-- filled by JS --></main>
+
+    <!-- ============================ FOOTER ========================= -->
+    <footer class="footer glass">
+      <div class="brand" style="justify-content:center">
+        <span class="logo">🎀</span><span><b id="footBrand">Rains</b></span>
+      </div>
+      <div class="socials">
+        <a id="igLink" href="#" target="_blank">📸 Instagram</a>
+        <a id="waLink" href="#" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="muted">© <span id="year">2026</span> <span id="footBrandCopy">Rains</span> · Made with 💜 · Order karne ke liye cart bharein aur WhatsApp par bhej dein.</div>
+    </footer>
+  </div>
+
+  <!-- ============================ CART ============================ -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart glass" id="cart" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h3>🛍️ Aap ka Cart</h3>
+      <button class="cart-close" id="closeCart" aria-label="Close">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"><!-- filled by JS --></div>
+
+    <div class="cart-foot">
+      <div class="field">
+        <label for="custName">Aap ka naam (optional)</label>
+        <input id="custName" type="text" placeholder="Naam">
+      </div>
+      <div class="field">
+        <label for="custPhone">Phone (optional)</label>
+        <input id="custPhone" type="text" placeholder="03xx-xxxxxxx">
+      </div>
+      <div class="field">
+        <label for="custAddr">Address (optional)</label>
+        <textarea id="custAddr" rows="2" placeholder="Delivery address"></textarea>
+      </div>
+      <div class="total"><span>Total</span><b id="cartTotal">Rs 0</b></div>
+      <button class="checkout" id="checkoutBtn" disabled>
+        <span>💬 Order on WhatsApp</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============================ TOAST ========================== -->
+  <div class="toast" id="toast">✓ <span>Added</span></div>
+
+  <!-- ============================ SCRIPTS ======================== -->
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* hero WhatsApp button -> uses number from config */
+    document.addEventListener("DOMContentLoaded", function () {
+      var wa = "https://wa.me/" + CONFIG.whatsappNumber +
+               "?text=" + encodeURIComponent("Assalam-o-Alaikum " + CONFIG.brandName + "! Mujhe products ke baare mein poochna tha 🌸");
+      document.getElementById("heroWa").href = wa;
+    });
+  </script>
+</body>
+</html>
